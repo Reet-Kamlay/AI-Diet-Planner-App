@@ -1,30 +1,40 @@
-import { View, Text, Platform, FlatList } from 'react-native'
-import React, { useRef } from 'react'
-import RecipeIntro from '../../components/RecipeIntro'
-import { useLocalSearchParams } from 'expo-router'
-import { useQuery } from 'convex/react'
-import { api } from '../../convex/_generated/api'
-import Colors from '../../shared/Colors'
-import RecipeIngredients from '../../components/RecipeIngredients'
-import RecipeSteps from '../../components/RecipeSteps'
-import Button from '../../components/shared/Button'
-import ActionSheet from 'react-native-actions-sheet'
-import AddToMealActionSheet from '../../components/AddToMealActionSheet'
+import { View, Text, Platform, FlatList } from 'react-native';
+import React, { useEffect, useRef, useState } from 'react';
+import { useRouter, useLocalSearchParams } from 'expo-router';
+import { useQuery } from 'convex/react';
+import { api } from '../../convex/_generated/api';
+import RecipeIntro from '../../components/RecipeIntro';
+import RecipeIngredients from '../../components/RecipeIngredients';
+import RecipeSteps from '../../components/RecipeSteps';
+import Button from '../../components/shared/Button';
+import ActionSheet from 'react-native-actions-sheet';
+import AddToMealActionSheet from '../../components/AddToMealActionSheet';
+import Colors from '../../shared/Colors';
 
 export default function RecipeDetail() {
-  const { recipeId } = useLocalSearchParams()
-  const actionSheetRef = useRef(null)
+  const actionSheetRef = useRef(null);
+  const { recipeId } = useLocalSearchParams(); // works fine with `router.push({ pathname: '/recipe-detail', params: { recipeId: "xxx" } })`
 
-  const recipeDetail = useQuery(api.Recipes.GetRecipeById, {
-    id: recipeId || 'j97asgvpemgye57djhcpc3978h7kv6mh',
-  })
+  const [recipeIdState, setRecipeIdState] = useState(null);
 
-  if (!recipeDetail) {
+  useEffect(() => {
+    if (typeof recipeId === 'string') {
+      setRecipeIdState(recipeId);
+    }
+  }, [recipeId]);
+
+  const recipeDetail = useQuery(
+    api.Recipes.GetRecipeById,
+    recipeIdState ? { id: recipeIdState } : "skip"
+  );
+
+  // 🌀 Loading fallback
+  if (!recipeIdState || !recipeDetail) {
     return (
       <View style={{ padding: 20, paddingTop: Platform.OS === 'ios' ? 40 : 30 }}>
         <Text>Loading recipe...</Text>
       </View>
-    )
+    );
   }
 
   return (
@@ -59,5 +69,5 @@ export default function RecipeDetail() {
         />
       </ActionSheet>
     </>
-  )
+  );
 }

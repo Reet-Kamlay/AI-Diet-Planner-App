@@ -1,5 +1,5 @@
 import { v } from "convex/values";
-import { mutation } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 
 export const CreateMealPlan = mutation({
   args: {
@@ -19,14 +19,40 @@ export const CreateMealPlan = mutation({
   },
 });
 
-// export const GetTodaysMealPlan=query({
-//     args:{
-//         uid:v.id('Users'),
-//         date:v.string()
-//     },
-//     handler:async(ctx,args)=>{
-//         const mealPlan=await ctx.db.query('mealPlan')
-//         .filter(q=>q.add(q.eq(q.field('uid'),args.uid)))
+export const GetTodaysMealPlan = query({
+  args: {
+    uid: v.id("Users"),
+    date: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const mealPlans = await ctx.db
+      .query("mealPlan")
+      .filter((q) =>
+        q.and(q.eq(q.field("uid"), args.uid))
+      )
+      .collect();
 
-//     }
-// })
+    const results = await Promise.all(
+      mealPlans.map(async (mealPlan) => {
+        const recipe = await ctx.db.get(mealPlan.recipeId);
+        return {
+          mealPlan,
+          recipe,
+        };
+      })
+    );
+    return results;
+  },
+});
+
+export const updateStatus=mutation({
+    args:{
+        id:v.id('mealPlan'),
+        status:v.optional(v.boolean())
+    },
+    handler:async(ctx,args)=>{
+        const result=await ctx.db.patch(args.id,{
+            status:args.status
+        })
+    }
+})

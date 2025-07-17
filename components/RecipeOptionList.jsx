@@ -86,9 +86,11 @@ Only return valid JSON. No markdown or explanation.
 
       console.log("✅ Saved to Convex:", saveRecipeResult);
       router.push({
-        pathname:'/recipe-detail',
-        recipeId:saveRecipeResult
-      })
+  pathname: '/recipe-detail',
+  params: { recipeId: saveRecipeResult } // ✅ correctly pass `recipeId` as a param
+});
+
+
     } catch (e) {
       console.error("🔥 Error in onRecipeoptionSelect:", e.message || e);
     } finally {

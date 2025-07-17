@@ -6,6 +6,7 @@ import HomeHeader from '../../components/HomeHeader';
 import TodayProgress from '../../components/TodayProgress';
 import GenerateRecipeCard from '../../components/GenerateRecipeCard';
 import TodaysMealPlan from '../../components/TodaysMealPlan';
+import { FlatList } from 'react-native-actions-sheet';
 export default function Home() {
     const {user}=useContext(UserContext)
     const router=useRouter();
@@ -15,6 +16,10 @@ export default function Home() {
         }
     })
   return (
+    <FlatList
+    data={[]}
+    renderItem={()=>null}
+    ListHeaderComponent={
     <View style={{
       padding:20
     }}>
@@ -22,6 +27,7 @@ export default function Home() {
       <TodayProgress/>
       <GenerateRecipeCard/>
       <TodaysMealPlan/>
-    </View>
+    </View>}
+    ></FlatList>
   )
 }

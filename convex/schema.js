@@ -25,6 +25,7 @@ export default defineSchema({
         recipeId:v.id('recipes'),
         date:v.string(),
         mealType:v.string(),
-        uid:v.id('Users')
+        uid:v.id('Users'),
+        status:v.optional(v.boolean())
     })
 })
