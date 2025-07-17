@@ -27,9 +27,7 @@ export const GetTodaysMealPlan = query({
   handler: async (ctx, args) => {
     const mealPlans = await ctx.db
       .query("mealPlan")
-      .filter((q) =>
-        q.and(q.eq(q.field("uid"), args.uid))
-      )
+      .filter((q) => q.and(q.eq(q.field("uid"), args.uid),q.eq(q.field("date"), args.date)))
       .collect();
 
     const results = await Promise.all(
@@ -45,14 +43,36 @@ export const GetTodaysMealPlan = query({
   },
 });
 
-export const updateStatus=mutation({
-    args:{
-        id:v.id('mealPlan'),
-        status:v.optional(v.boolean())
-    },
-    handler:async(ctx,args)=>{
-        const result=await ctx.db.patch(args.id,{
-            status:args.status
-        })
-    }
-})
+export const updateStatus = mutation({
+  args: {
+    id: v.id("mealPlan"),
+    status: v.optional(v.boolean()),
+    calories: v.number(),
+  },
+  handler: async (ctx, args) => {
+    const result = await ctx.db.patch(args.id, {
+      status: args.status,
+      calories: args.calories,
+    });
+  },
+});
+
+export const GetTotalCaloriesConsumed = query({
+  args: {
+    date: v.string(),
+    uid: v.id("Users"),
+  },
+  handler: async (ctx, args) => {
+    const mealPlanResult = await ctx.db
+      .query("mealPlan")
+      .filter(q =>
+        q.and(q.eq(q.field("date"), args.date), q.eq(q.field("uid"), args.uid),q.eq(q.field('status'),true))
+      )
+      .collect();
+
+      const totalCalories=mealPlanResult?.reduce((sum,meal)=>{
+        return sum+(meal.calories??0);
+      },0)
+      return totalCalories
+  },
+});
