@@ -38,7 +38,7 @@ export default function RecipeDetail() {
           <Button title={'Add to Meal Plan'} onPress={()=>actionSheetRef.current.show()}/>
         </View>
         <ActionSheet ref={actionSheetRef} >
-          <AddToMealActionSheet recipeDetail={recipeDetail}/>
+          <AddToMealActionSheet recipeDetail={recipeDetail} hideActionSheet={()=>actionSheetRef.current?.hide()}/>
         </ActionSheet>
 
     </View>
