@@ -66,7 +66,6 @@ export default function AddToMealActionSheet({ recipeDetail, hideActionSheet }) 
   return (
     <View style={{ padding: 20 }}>
       <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'center' }}>Add to Meal</Text>
-      <DataSelectionCard setSelectedDate={setSelectedDate}/>
 
       <Text style={{ fontSize: 18, fontWeight: 'bold', marginTop: 15 }}>Select Date</Text>
 
