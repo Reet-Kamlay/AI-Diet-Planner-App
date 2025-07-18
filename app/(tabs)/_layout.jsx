@@ -1,8 +1,8 @@
-import { View, Text } from 'react-native'
+
 import React from 'react'
 import { Tabs } from 'expo-router'
 import { HugeiconsIcon } from '@hugeicons/react-native';
-import {AnalyticsUpIcon, Home03Icon, SpoonAndForkIcon, UserSquareFreeIcons, UserSquareIcon} from '@hugeicons/core-free-icons'
+import {AnalyticsUpIcon, Home03Icon, SpoonAndForkIcon,  UserSquareIcon} from '@hugeicons/core-free-icons'
 import Colors from './../../shared/Colors';
 export default function TabLayout() {
   return (

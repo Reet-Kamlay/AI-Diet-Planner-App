@@ -1,6 +1,6 @@
-import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native'
+import {  Text, TouchableOpacity, ActivityIndicator } from 'react-native'
 import React from 'react'
-import Colors from '@/shared/Colors'
+import Colors from './../../shared/Colors'
 
 export default function Button({title,onPress,icon,loading=false}) {
   return (

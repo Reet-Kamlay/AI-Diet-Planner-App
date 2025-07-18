@@ -5,9 +5,9 @@ import { useRouter } from "expo-router";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./../services/FirebaseConfig";
 import { useContext, useEffect } from "react";
-import { UserContext } from "@/context/UserContext";
+import { UserContext } from "../context/UserContext";
 import { useConvex } from "convex/react";
-import { api } from "@/convex/_generated/api";
+import { api } from "../convex/_generated/api";
 
 export default function Index() {
   const router = useRouter();
@@ -40,7 +40,7 @@ export default function Index() {
     });
 
     return () => unsubscribe();
-  }, []);
+  });
 
   return (
     <View style={{ flex: 1 }}>

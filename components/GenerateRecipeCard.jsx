@@ -1,8 +1,7 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import {  Text, TouchableOpacity } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import Colors from "../shared/Colors";
-import Button from "./shared/Button";
 import { HugeiconsIcon } from "@hugeicons/react-native";
 import { ArrowRight02Icon } from "@hugeicons/core-free-icons";
 import { useRouter } from "expo-router";

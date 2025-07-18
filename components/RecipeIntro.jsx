@@ -1,11 +1,10 @@
-import { View, Text, Platform, StyleSheet } from 'react-native'
+import { View, Text,  StyleSheet } from 'react-native'
 import React from 'react'
-import { useSearchParams } from 'expo-router/build/hooks'
 import { Image } from 'expo-image'
 
 import Colors from '../shared/Colors'
 import { HugeiconsIcon } from '@hugeicons/react-native'
-import { Fire02Icon, Fire03Icon, PlusSignSquareIcon } from '@hugeicons/core-free-icons'
+import {  Fire03Icon, PlusSignSquareIcon } from '@hugeicons/core-free-icons'
 
 export default function RecipeIntro({recipeDetail}) {
     const RecipeJson=recipeDetail?.jsonData;

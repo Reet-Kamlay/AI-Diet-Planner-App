@@ -1,4 +1,4 @@
-import { View, Text, Image, Pressable, Alert } from 'react-native'
+import { View, Text, Image,  Alert } from 'react-native'
 import React, { useContext, useState } from 'react'
 import Input from '../../components/shared/Input'
 import Button from '../../components/shared/Button'
@@ -64,7 +64,7 @@ export default function SignIn() {
                 textAlign:"center",
                 fontSize:16,
                 marginTop:15
-            }}> Don't have an account?</Text>
+            }}> Don&apos;t have an account?</Text>
             <Link href={'/auth/SignUp'}><Text style={{
                 textAlign:"center",
                 fontSize:16,

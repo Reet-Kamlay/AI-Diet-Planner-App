@@ -1,6 +1,6 @@
 import { View, Text, Platform, FlatList } from 'react-native';
 import React, { useEffect, useRef, useState } from 'react';
-import { useRouter, useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams } from 'expo-router';
 import { useQuery } from 'convex/react';
 import { api } from '../../convex/_generated/api';
 import RecipeIntro from '../../components/RecipeIntro';

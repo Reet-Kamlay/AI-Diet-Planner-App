@@ -1,6 +1,5 @@
-import { View, Text } from 'react-native'
+import { View, Text ,FlatList } from 'react-native'
 import React from 'react'
-import { FlatList } from 'react-native';
 import Colors from '../shared/Colors';
 
 export default function RecipeSteps({recipeDetail}) {

@@ -6,7 +6,7 @@ import Button from './shared/Button';
 import { useMutation } from 'convex/react';
 import { api } from '../convex/_generated/api';
 import { UserContext } from './../context/UserContext';
-import DataSelectionCard from './DataSelectionCard';
+
 
 // ✅ Lucide icons
 import { Coffee, Sun, Moon } from 'lucide-react-native';

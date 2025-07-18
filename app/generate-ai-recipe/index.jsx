@@ -29,7 +29,7 @@ export default function GenerateAiRecipe() {
     }
   return (
     <View style={{
-        paddingTop: Platform.OS == 'ios' ? 40:30,
+        paddingTop: Platform.OS === 'ios' ? 40:30,
         padding:20,
         backgroundColor:Colors.WHITE,
         height:'100%'

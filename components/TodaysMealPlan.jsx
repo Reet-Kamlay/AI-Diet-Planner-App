@@ -33,7 +33,7 @@ export default function TodaysMealPlan({selectedDate}) {
       {!selectedDate && <Text style={{
         fontSize:20,
         fontWeight:'bold'
-      }}>Today's Meal Plan</Text>}
+      }}>Today&apos;s Meal Plan</Text>}
       {!mealPlan ?
       <View style={{
         display:'flex',
@@ -50,7 +50,7 @@ export default function TodaysMealPlan({selectedDate}) {
         color:Colors.GRAY,
         marginBottom:20
     }
-}>You Don't have any meal plan for Today</Text>
+}>You Don&apos;t have any meal plan for Today</Text>
 <Button title={'Create New Meal Plan'}></Button>
       </View>
       :<View>

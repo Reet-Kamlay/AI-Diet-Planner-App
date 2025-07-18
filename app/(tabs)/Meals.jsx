@@ -16,7 +16,7 @@ const recipeList=useQuery(api.Recipes.GetAllRecipes)
     ListHeaderComponent={
     <View style={{
       padding:20,
-      paddingTop:Platform.OS== 'ios' ? 40:30
+      paddingTop:Platform.OS=== 'ios' ? 40:30
     }}>
       <Text style={{
         fontSize:25,

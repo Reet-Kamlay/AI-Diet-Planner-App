@@ -13,7 +13,7 @@ export default function Progress() {
     ListHeaderComponent={
     <View style={{
       padding:20,
-      paddingTop:Platform?.OS=='ios'?40:25
+      paddingTop:Platform?.OS==='ios'?40:25
     }}>
       <Text style={{
         fontSize:25,

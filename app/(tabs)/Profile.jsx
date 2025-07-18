@@ -40,7 +40,7 @@ export default function Profile(){
   const {user,setUser} = useContext(UserContext)
   const router=useRouter();
   const OnMenuOptionClick=(menu)=>{
-    if(menu.path=='logout'){
+    if(menu.path==='logout'){
       signOut(auth).then(()=>{
         console.log('SIGNOUT')
         setUser(null);
@@ -54,7 +54,7 @@ export default function Profile(){
     <View style={
       {
         padding:20,
-        paddingTop:Platform?.OS=='ios'?40:25
+        paddingTop:Platform?.OS==='ios'?40:25
       }
     }>
       <Text style={{

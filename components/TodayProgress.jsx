@@ -41,7 +41,7 @@ export default function TodayProgress() {
       <Text style={{
         fontSize: 20,
         fontWeight:'bold'
-      }}>Today's Goal</Text>
+      }}>Today&apos;s Goal</Text>
       <Text style={{
             fontSize :18
       }}>{moment().format('MMM DD, yyyy')}</Text>
@@ -57,7 +57,7 @@ export default function TodayProgress() {
         textAlign:'center',
         marginTop:2,
         fontSize:16
-      }}>You'r doing great!</Text>
+      }}>You&apos;r doing great!</Text>
       <View style={{
         backgroundColor:Colors.GRAY,
         height:10,

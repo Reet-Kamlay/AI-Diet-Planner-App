@@ -113,7 +113,7 @@ export default function Preferance() {
                     <TouchableOpacity onPress={() => setGender('Male')} style={{
                         borderWidth: 1,
                         padding: 15,
-                        borderColor: gender == "Male" ? Colors.PRIMARY : Colors.GRAY,
+                        borderColor: gender === "Male" ? Colors.PRIMARY : Colors.GRAY,
                         borderRadius: 10,
                         flex: 1,
                         alignItems: 'center'
@@ -123,7 +123,7 @@ export default function Preferance() {
                     <TouchableOpacity onPress={() => setGender('Female')} style={{
                         borderWidth: 1,
                         padding: 15,
-                        borderColor: gender == "Female" ? Colors.PRIMARY : Colors.GRAY,
+                        borderColor: gender === "Female" ? Colors.PRIMARY : Colors.GRAY,
                         borderRadius: 10,
                         flex: 1,
                         alignItems: 'center'
@@ -135,9 +135,9 @@ export default function Preferance() {
 
             {/* Goal */}
             <View style={{ marginTop: 15 }}>
-                <Text style={{ fontWeight: 'medium', fontSize: 18 }}>What's Your Goal?</Text>
+                <Text style={{ fontWeight: 'medium', fontSize: 18 }}>What&apos;s Your Goal?</Text>
                 <TouchableOpacity onPress={() => setGoal('Weight Loss')} style={[styles.goalContainer, {
-                    borderColor: goal == 'Weight Loss' ? Colors.PRIMARY : Colors.GRAY
+                    borderColor: goal === 'Weight Loss' ? Colors.PRIMARY : Colors.GRAY
                 }]}>
                     <HugeiconsIcon icon={WeightScaleIcon} />
                     <View>
@@ -146,7 +146,7 @@ export default function Preferance() {
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => setGoal('Muscle Gain')} style={[styles.goalContainer, {
-                    borderColor: goal == 'Muscle Gain' ? Colors.PRIMARY : Colors.GRAY
+                    borderColor: goal === 'Muscle Gain' ? Colors.PRIMARY : Colors.GRAY
                 }]}>
                     <HugeiconsIcon icon={Dumbbell01Icon} />
                     <View>
@@ -155,7 +155,7 @@ export default function Preferance() {
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => setGoal('Weight Gain')} style={[styles.goalContainer, {
-                    borderColor: goal == 'Weight Gain' ? Colors.PRIMARY : Colors.GRAY
+                    borderColor: goal === 'Weight Gain' ? Colors.PRIMARY : Colors.GRAY
                 }]}>
                     <HugeiconsIcon icon={PlusSignSquareIcon} />
                     <View>

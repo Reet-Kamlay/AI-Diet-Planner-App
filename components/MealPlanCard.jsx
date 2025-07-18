@@ -50,7 +50,7 @@ export default function MealPlanCard({mealPlanInfo}) {
         <Text style={styles.calories}>{mealPlanInfo?.recipe?.jsonData?.calories} kcal</Text>
       </View>
       <View>
-        {mealPlanInfo?.mealPlan?.status!=true?<TouchableOpacity onPress={()=>onCheck(true)}><HugeiconsIcon icon={SquareIcon} color={Colors.GRAY} /></TouchableOpacity>:<TouchableOpacity onPress={()=>onCheck(false)}><HugeiconsIcon icon={CheckmarkSquare02Icon} color={Colors.GREEN} /></TouchableOpacity>}
+        {mealPlanInfo?.mealPlan?.status!==true?<TouchableOpacity onPress={()=>onCheck(true)}><HugeiconsIcon icon={SquareIcon} color={Colors.GRAY} /></TouchableOpacity>:<TouchableOpacity onPress={()=>onCheck(false)}><HugeiconsIcon icon={CheckmarkSquare02Icon} color={Colors.GREEN} /></TouchableOpacity>}
       </View>
       </View>
     </View>

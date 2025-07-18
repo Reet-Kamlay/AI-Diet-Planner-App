@@ -1,4 +1,4 @@
-import { View, Text, Image, Pressable, Alert } from "react-native";
+import { View, Text, Image,  Alert } from "react-native";
 import React, { useContext, useState } from "react";
 import Input from "../../components/shared/Input";
 import Button from "../../components/shared/Button";
