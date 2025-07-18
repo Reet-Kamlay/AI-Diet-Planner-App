@@ -1,4 +1,7 @@
 {
+  "cli": {
+    "appVersionSource": "expo-project"
+  },
   "build": {
     "preview": {
       "android": {
@@ -16,6 +19,9 @@
     "preview4": {
       "distribution": "internal"
     },
-    "production": {}
+    "production": {
+      "developmentClient": false,
+      "distribution": "store"
+    }
   }
 }
