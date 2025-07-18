@@ -6,6 +6,7 @@ import Button from './shared/Button';
 import { useMutation } from 'convex/react';
 import { api } from '../convex/_generated/api';
 import { UserContext } from './../context/UserContext';
+import DataSelectionCard from './DataSelectionCard';
 
 // ✅ Lucide icons
 import { Coffee, Sun, Moon } from 'lucide-react-native';
@@ -65,6 +66,7 @@ export default function AddToMealActionSheet({ recipeDetail, hideActionSheet }) 
   return (
     <View style={{ padding: 20 }}>
       <Text style={{ fontSize: 20, fontWeight: 'bold', textAlign: 'center' }}>Add to Meal</Text>
+      <DataSelectionCard setSelectedDate={setSelectedDate}/>
 
       <Text style={{ fontSize: 18, fontWeight: 'bold', marginTop: 15 }}>Select Date</Text>
 

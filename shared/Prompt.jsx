@@ -1,9 +1,17 @@
 export default{
-    CALORIES_PROMPT: `Based on Weight,Height,Gender,Goal give me calories and proteins need daily Consider Age as 28 in JSON format and follow the schema:
-    {
-        calories:<>,
-        proteins:<>
-    }`,
+    CALORIES_PROMPT: `You are a health assistant AI.
+
+Your task:
+Given weight, height, gender, and goal, return a JSON object with estimated daily calories and proteins. Assume age is 28. 
+
+Strictly respond with **only valid JSON** — no explanation, no headings, no backticks.
+
+Schema:
+{
+  "calories": number,
+  "proteins": number
+}
+Do not include any markdown or comments.`,
     GENERATE_RECIPE_OPTION_PROMPT:`:Depends on user instruction create 3 different Receipe variant with Recipe Name with Emoji,
     2 line description and main ingredient list in JSON format with field recipeName,description,ingredients (without size) only, Do not give me text response`,
     GENERATE_COMPLETE_RECIPE_PROMPT:`
