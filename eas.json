@@ -1,6 +1,6 @@
 {
   "cli": {
-    "appVersionSource": "expo-project"
+    "appVersionSource": "local"
   },
   "build": {
     "preview": {
@@ -20,8 +20,9 @@
       "distribution": "internal"
     },
     "production": {
-      "developmentClient": false,
-      "distribution": "store"
+      "android": {
+        "buildType": "app-bundle"
+      }
     }
   }
 }
