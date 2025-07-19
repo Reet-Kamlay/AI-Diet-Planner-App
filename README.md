@@ -1,50 +1,129 @@
-# Welcome to your Expo app 👋
+# 🧠🥗 AI Diet Planner App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+An AI-powered mobile app built with **React Native**, **Expo**, and **Convex**, designed to help users plan healthy meals using personalized diet recommendations, recipe breakdowns, and real-time nutrition analysis.
 
-## Get started
+> 📲 Built with React Native + Expo  
+> ☁️ Backend powered by Convex & Firebase  
+> 🤖 Uses AI to suggest meals, track ingredients, and generate diet plans
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 🚀 Features
 
-2. Start the app
+- 🧠 AI-generated meal recommendations
+- 📅 Meal planning & scheduling by day/time
+- 🥘 Detailed recipe view with steps and ingredients
+- 🍎 Nutrition breakdown (calories, protein, carbs, fats)
+- ➕ Add recipes to your daily meal plan
+- 🔍 Ingredient-based search
+- 🔐 User authentication via Firebase
+- 📦 Convex database integration for real-time sync
+- 📱 Smooth mobile UI with React Native + Expo
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🛠️ Tech Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **Frontend:** React Native (with `expo-router`)
+- **Backend:** Convex (Serverless Functions + Database)
+- **Authentication:** Firebase Auth
+- **APIs:** OpenRouter / OpenAI for AI meal planning
+- **Dev Tools:** Tailwind (via NativeWind), HugeIcons, EAS Build, `.env` for secrets
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## 📁 Folder Structure
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+app/
+  (home)
+  recipe/
+  meal-plan/
+  components/
+  hooks/
+  convex/
+  lib/
+  assets/
+.env
+app.config.js
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## ⚙️ Getting Started
 
-To learn more about developing your project with Expo, look at the following resources:
+### 1. Clone the Repo
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+git clone https://github.com/Reet-Kamlay/AI-Diet-Planner-App.git
+cd AI-Diet-Planner-App
+```
 
-## Join the community
+### 2. Install Dependencies
 
-Join our community of developers creating universal apps.
+```bash
+npm install
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 3. Configure Environment Variables
+
+Create a `.env` file with:
+
+```env
+EXPO_PUBLIC_CONVEX_URL=your_convex_url
+EXPO_PUBLIC_FIREBASE_API_KEY=your_firebase_key
+EXPO_PUBLIC_OPENROUTER_API_KEY=your_openrouter_or_openai_key
+EXPO_PUBLIC_AIRGURU_LAB_API=your_custom_api_if_used
+```
+
+> Make sure these are also added to `app.config.js` under `extra`.
+
+### 4. Run the App
+
+```bash
+npx expo start
+```
+
+You can run it on your emulator or your physical device with the Expo Go app.
+
+---
+
+## 📸 Screenshots (optional)
+
+_Add screenshots here once the UI is finalized._
+
+---
+
+## 📦 Deployment
+
+This project is EAS-ready for build and deployment:
+
+```bash
+eas build --platform android
+```
+
+---
+
+## 📌 TODO / Future Features
+
+- 📝 Save meal history
+- 💬 Chat-style AI interface
+- 📊 Weekly nutrition summary
+- 📷 Upload food images for calorie detection
+- 🌐 Offline support
+
+---
+
+## 🙏 Acknowledgements
+
+- [Convex](https://www.convex.dev/)
+- [Firebase](https://firebase.google.com/)
+- [OpenRouter](https://openrouter.ai/) / [OpenAI](https://openai.com/)
+- [Expo](https://expo.dev/)
+- [NativeWind](https://www.nativewind.dev/)
+
+---
+
+## 📜 License
+
+MIT © 2025 [Reet Kamlay](https://github.com/Reet-Kamlay)
